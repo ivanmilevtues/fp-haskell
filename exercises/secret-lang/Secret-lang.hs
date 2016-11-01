@@ -46,4 +46,7 @@ dropN a  (x:xs) = dropN (a - 1) xs
 
 --Assume we'll be decoding only valid words
 decode :: String -> String
-decode = undefined
+decode [] = []
+decode (x:'o':y:xs)
+    | x == y = x : decode xs
+decode (x:xs) = x:decode xs
