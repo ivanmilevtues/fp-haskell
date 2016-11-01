@@ -34,11 +34,12 @@ encode (x:xs) = x : (encode xs)
 encode' :: String -> String
 encode' [] = []
 encode' (x:xs)
-    | isConsonant x = x : 'o' : toLower x : (encode xs)
-encode' (x:xs) = x : (encode xs)
+    | isConsonant x = x : 'o' : toLower x : (encode' xs)
+encode' (x:xs) = x : (encode' xs)
 
 -- Bonus #2
 dropN :: Int -> String -> String
+dropN _ [] = []
 dropN 0 anyString = anyString
 dropN a  (x:xs) = dropN (a - 1) xs
 
