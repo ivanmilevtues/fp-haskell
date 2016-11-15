@@ -1,6 +1,5 @@
 import Data.Char(toLower)
 
-
 isChar :: Char -> Bool
 isChar ch
     |toLower ch >= 'a' && toLower ch <= 'z' = True
@@ -44,9 +43,14 @@ dropN 0 anyString = anyString
 dropN a  (x:xs) = dropN (a - 1) xs
 
 
---Assume we'll be decoding only valid words
+-- Assume we'll be decoding only valid words
 decode :: String -> String
+<<<<<<< HEAD
 decode [] = []
 decode (x:'o':y:xs)
     | x == y = x : decode xs
 decode (x:xs) = x:decode xs
+=======
+decode = undefined
+
+>>>>>>> c48c6b3660bd9b1429acba58cb5198a8ec08411d
